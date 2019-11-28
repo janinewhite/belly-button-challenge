@@ -1,2 +1,2 @@
 # belly-button-challenge
-Belly button biodiversity visualuzation
+Belly button biodiversity visualization
