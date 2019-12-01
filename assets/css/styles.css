@@ -1,0 +1,24 @@
+@media (min-width:1200px) {
+  .containermax-width: 1140px.header-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width:992px) {
+  .header-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .header-container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width:576px) {
+  .header-container {
+    max-width: 100%;
+  }
+}
+
