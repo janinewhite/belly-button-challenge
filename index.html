@@ -40,7 +40,8 @@
             </div>
             <div class="row" style="width: 100%;">
                 <div class="col-md-12">
-                    <p class="text-center" style="color: rgb(133,252,138);"><br>Use the interactive charts below to explore the dataset<br><br></p>
+                    <p class="text-center" style="color: rgb(133,252,138);"><br>Select a test subject to explore a&nbsp;<a class="text-light" href="http://robdunnlab.com/projects/belly-button-biodiversity/" target="_blank">dataset</a>&nbsp;of microbial species, or operational taxinomical units (OTUs), found
+                        in people's belly buttons.<br><br></p>
                 </div>
             </div>
         </div>
@@ -51,15 +52,23 @@
                 <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto text-center filter-column" id="filter-column">
                     <p style="color: rgb(133,252,138);">Test Subject ID Number</p>
                 </div>
+                <div class="col" id="metadata">
+                    <p id="ethnicity" class="ethnicity" style="color: rgb(133,252,138);margin-bottom: 5px;">Ethnicity:</p>
+                    <p id="gender" style="color: rgb(133,252,138);margin-bottom: 5px;">Gender:</p>
+                    <p id="age" style="color: rgb(133,252,138);margin-bottom: 5px;">Age:</p>
+                    <p id="location" style="color: rgb(133,252,138);margin-bottom: 5px;">Location:</p>
+                    <p id="bbtype" style="color: rgb(133,252,138);margin-bottom: 5px;">Belly Button Type:</p>
+                    <p id="wash-freq" style="color: rgb(133,252,138);margin-bottom: 5px;">Washing Frequency:</p>
+                </div>
+                <div class="col-md-4" id="guage"></div>
             </div>
         </div>
     </div>
-    <div style="background-color: #254d32;">
+    <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-4" id="bar"></div>
-                <div class="col-md-4" id="bubble"></div>
-                <div class="col-md-4" id="guage"></div>
+                <div class="col-md-6" id="bar"></div>
+                <div class="col-md-6" id="bubble"></div>
             </div>
         </div>
     </div>
