@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Header--Menu--Sections.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -46,74 +46,25 @@
         </div>
     </div>
     <div id="filter-block" style="background-color: #254d32;">
-        <div class="container" id="filter-container">
-            <div class="row" id="filter-row">
-                <div class="col-md-6" id="filter-column">
-                    <div class="dropdown" id="test-subject-dropdown"><button class="btn btn-primary dropdown-toggle well" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(133,252,138);color: #254d32;margin-top: 20px;">Test Subject ID Number</button>
-                        <div class="dropdown-menu"
-                            role="menu" id="dropdown-menu" style="background-color: rgb(133,252,138);"><a class="dropdown-item" role="presentation" id="subject-943" value="943">943</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                    </div>
+        <div class="container text-center" id="filter-container">
+            <div class="row text-center d-md-flex justify-content-md-center" id="filter-row" style="padding: 15px;">
+                <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xl-auto text-center filter-column" id="filter-column">
+                    <p style="color: rgb(133,252,138);">Test Subject ID Number</p>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <div class="demo-2"></div>
-        <section class="section-light-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-4 col-md-4 col-lg-4" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true"><i class="icon ion-battery-empty icon-green-dark block-flex"></i></div>
-                    <div class="col-12 col-sm-4 col-md-4 col-lg-4" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true"><i class="icon ion-battery-low icon-green-dark block-flex"></i></div>
-                    <div class="col-12 col-sm-4 col-md-4 col-lg-4" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true"><i class="icon ion-battery-charging icon-green-dark block-flex"></i></div>
-                </div>
+    <div style="background-color: #254d32;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" id="bar"></div>
+                <div class="col-md-4" id="bubble"></div>
+                <div class="col-md-4" id="guage"></div>
             </div>
-        </section>
-        <section class="section-dark-green c-green">
-            <p class="text-center margin0 c-green" data-aos="zoom-out" data-aos-duration="1200" data-aos-once="true">THE <strong>CLEAN ENERGY</strong> IS GREAT FOR ALL AND WORK! MAKE A DIFERENCE AND <strong>LIVE BETTER!</strong></p>
-        </section>
-    </div><div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Demographic Info</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body"></div>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div id="bar"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bubble"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/app.js"></script>
-  <!-- script src="./static/js/bonus.js"></script -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js&quot;"></script>
     <script src="assets/js/app.js"></script>
 </body>
 

@@ -1,33 +1,33 @@
 // Get data
 const data_url="https://janinewhite.github.io/belly-button-challenge/static/db/samples.json";
-var names,
-    metaData,
-    samples;
-function getData(data_url){
-    d3.json(data_url).then(data => {
-        console.log(data);
-        console.log(data.names);
-        names = data.names;
-        metaData = data["metaData"];
-        samples = data["samples"];
-    });
-}
-getData(data_url);
 
-// Create dropdown list of sample ids
-var dropdown = document.querySelector("#dropdown-menu");
-console.log(names)
-for (name in names) {
-    console.log(name)
-    let a = document.createElement('a');
-    a.id = "subject-"+name;
-    a.class = "dropdown-item";
-    a.role = "presentation";
-    a.value = name;
-    let link = document.createTextNode(name);
-    a.appendChild(link);
-    dropdown.append(a);
+var jsondata;
+
+function makeSelect() {
+    
 }
+
+d3.json(data_url).then(data => {
+    console.log(data);
+    var subjects = data.names;
+    console.log("Subjects: "+data.names);
+    var metaData = data.metaData;
+    var samples = data.samples;
+    // Create dropdown list of sample ids
+    console.log("Populating "+data.names.length+" subjects");
+    var dropDown = d3.select('#filter-column').append("select")
+        .attr("id","subject-selection")
+        .style("background-color","rgb(133,252,138)")
+    ;
+    var options = dropDown.selectAll("option")
+        .data(subjects)
+        .enter()
+        .append("option")
+        .attr("value",function(d) {return d;})
+        .text(function(d) {return d;})
+    ;
+    d3.selectAll("#subject-selection").on("change",buildPlot());
+});
 
 // Get sample by id
 var sample_index = -1;
@@ -44,17 +44,12 @@ function getSample(samples,sample_id) {
 }
 
 // Plot data
-function buildPlot(samples,filter){
+function buildPlot(){
+    var filter = d3.select("#subject-selection").property("value");
     getSample(samples,filter);
     console.log(sample);
 }
 
-// Add selection event
-var selectSubject = d3.select("#dropdown-menu")
-$("#dropdown-menu a").click(function(e){
-    e.preventDefault();
-    var btnText = $(this).text();
-    buildPlot(samples,btnText);
-});
+
 
 
