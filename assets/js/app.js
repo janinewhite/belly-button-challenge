@@ -78,7 +78,7 @@ function updateDemographics(meta){
     let subject_gender = "Gender: "+meta.gender;
     let subject_age = "Age: "+meta.age;
     let subject_location = "Location: "+meta.location;
-    let subject_bbtype = "Gender: "+meta.bbtype;
+    let subject_bbtype = "Belly Button Type: "+meta.bbtype;
     let subject_washfreq = "Washing Frequency: "+meta.wfreq;
 
     d3.select(".subjectid").text(subjectid);
