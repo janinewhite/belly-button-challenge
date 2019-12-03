@@ -1,5 +1,5 @@
 // Get data
-const data_url="https://janinewhite.github.io/belly-button-challenge/static/db/samples.json";
+const data_url="https://janinewhite.github.io/belly-button-challenge/assets/db/samples.json";
 
 var jsondata;
 var subjects;
@@ -144,7 +144,7 @@ function buildPlot(filter){
         }
     ];
     var gauge_layout = {
-        height: 175,
+        height: 200,
         margin: { t: 0, b: 0}
     };
     Plotly.newPlot('gauge', gauge_data, gauge_layout);
