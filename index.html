@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="assets/css/Header--Menu--Sections.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -22,11 +23,10 @@
             <div><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp-active"></i>HOME </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="sharpe-trading-curso-mercado-de-capitais-tape-rading-online-presencial-profissional-2017-brasil-goiania.html"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp"></i>INFORMATIONS</a></li>
-                    <li class="nav-item"
-                        role="presentation"><a class="nav-link" href="#"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp"></i>PLANS</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp"></i>CONTACT</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#contact" style="color: #254d32;"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp-active"></i>Janine White&nbsp;</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#contact" style="color: #254d32;"><i class="icon ion-ios-lightbulb padding-r7 icon-lamp"></i>Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -53,25 +53,43 @@
                     <p style="color: rgb(133,252,138);">Test Subject ID Number</p>
                 </div>
                 <div class="col" id="metadata">
+                    <p id="subjectid" class="subjectid" style="color: rgb(133,252,138);margin-bottom: 5px;">ID:</p>
                     <p id="ethnicity" class="ethnicity" style="color: rgb(133,252,138);margin-bottom: 5px;">Ethnicity:</p>
                     <p id="gender" class="gender" style="color: rgb(133,252,138);margin-bottom: 5px;">Gender:</p>
                     <p id="age" class="age" style="color: rgb(133,252,138);margin-bottom: 5px;">Age:</p>
                     <p id="location" class="location" style="color: rgb(133,252,138);margin-bottom: 5px;">Location:</p>
                     <p id="bbtype" class="bbtype" style="color: rgb(133,252,138);margin-bottom: 5px;">Belly Button Type:</p>
-                    <p id="wash-freq" class="wash-freq" style="color: rgb(133,252,138);margin-bottom: 5px;">Washing Frequency:</p>
                 </div>
-                <div class="col-md-4" id="guage"></div>
+                <div class="col-md-4" id="gauge" style="height: 175px;"></div>
             </div>
         </div>
     </div>
     <div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="charts-row">
                 <div class="col-md-6" id="bar"></div>
                 <div class="col-md-6" id="bubble"></div>
             </div>
         </div>
     </div>
+    <section class="clean-block about-us" style="background-color: #254d32;width: 100%;">
+        <div class="container" id="AboutMe">
+            <div class="block-heading"></div>
+            <div class="row justify-content-center" style="padding-top: 20px;">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center">
+                        <h2 class="text-center text-info" id="contact" style="color: #254d32;">Contact</h2><img class="card-img w-100 d-block" src="assets/img/janine-white.JPG" style="max-width: 100%;">
+                        <div class="card-body info">
+                            <h4 class="card-title" style="color: #254d32;">Janine White</h4>
+                            <p class="card-text" style="color: #254d32;">Contact me or see my work:</p>
+                            <div class="icons"><a href="https://www.linkedin.com/in/janinewhite/"><i class="icon-social-linkedin" style="color: #254d32;"></i></a><a href="https://github.com/janinewhite"><i class="icon-social-github" style="color: #254d32;"></i></a><a href="mailto:janine.white@gmail.com"><i class="icon-envelope" style="color: #254d32;"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/app.js"></script>
