@@ -94,31 +94,36 @@ function buildPlot(filter){
     getSample(samples,filter);
     console.log(sample);
     updateDemographics(meta);
-    var x = sample.otu_ids;
-    var y = sample.sample_values;
+    var otu_ids = sample.otu_ids;
+    var values = sample.sample_values;
     var text = sample.otu_labels;
     var bar_trace = {
-        x: x,
-        y: y,
+        x: values,
+        y: otu_ids,
         type: "bar",
+        orientation: "h",
         text: text
     };
     var bar_data = [bar_trace];
     var bar_layout = {
-        title: "Sample Values by OTU Id Bar Chart"
+        title: "Sample Values by OTU Id Bar Chart",
+        yaxis: {title: {text: "OTU IDs"}},
+        xaxis: {title: {text: "Sample Values"}}
     };
     Plotly.newPlot("bar",bar_data,bar_layout);
     var bubble_trace = {
-        x: x,
-        y: y,
+        x: otu_ids,
+        y: values,
         text: text,
         mode: 'markers',
-        marker: {size: y}
+        marker: {size: values}
     };
     var bubble_data = [bubble_trace];
     var bubble_layout = {
         title: "Sample Values by OTU Id Bubble Chart",
-        showlegend: false
+        showlegend: false,
+        xaxis: {title: {text: "OTU IDs"}},
+        yaxis: {title: {text: "Sample Values"}}
     };
     Plotly.newPlot("bubble",bubble_data,bubble_layout);
     var washing_freq = meta.wfreq;
