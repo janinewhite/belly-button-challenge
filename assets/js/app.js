@@ -11,7 +11,7 @@ var filter;
 function defineData(jsondata) {
     subjects = jsondata.names;
     metaData = jsondata.metadata;
-    samples = jsondata.samples;    
+    samples = jsondata.samples;
 }
 
 // Create dropdown list of sample ids
@@ -32,10 +32,12 @@ function makeSelect(subjects) {
 
 // Get sample by id
 var sample_index = -1;
-var sample;
+var sample = {};
+var otus = [];
 var meta;
 function getSample(samples,sample_id) {
     console.log("Looking for:"+sample_id);
+    sample = {};
     for (i = 0; i < samples.length; i++) {
         if (samples[i].id == sample_id){
             sample_index = i;
@@ -44,6 +46,24 @@ function getSample(samples,sample_id) {
             break;
         }
     }
+    // Create OTU Labels
+    var otus = [];
+    for (i = 0; i < sample.otu_ids.length; i++) {
+        otus[i] = "OTU "+sample.otu_ids[i];
+    }
+    console.log(otus);
+    sample.otus = otus;
+    console.log("sample before sort:");
+    console.log(sample);
+    // Sort OTUs by sample value
+    var indices = [...sample.sample_values.keys()];
+    indices.sort((a, b) => sample.sample_values[b] - sample.sample_values[a]);
+    sample.otus = indices.map(i => sample.otus[i]);
+    sample.otu_ids = indices.map(i => sample.otu_ids[i]);
+    sample.otu_labels = indices.map(i => sample.otu_labels[i]);
+    sample.sample_values = indices.map(i => sample.sample_values[i]);
+    console.log("sample after sort:");
+    console.log(sample);
 }
 
 //Calculate gauge statistics
@@ -92,22 +112,24 @@ function updateDemographics(meta){
 // Plot data
 function buildPlot(filter){
     getSample(samples,filter);
+    console.log("Sample "+filter+":");
     console.log(sample);
     updateDemographics(meta);
+    var otus = sample.otus;
     var otu_ids = sample.otu_ids;
     var values = sample.sample_values;
     var text = sample.otu_labels;
     var bar_trace = {
-        x: values,
-        y: otu_ids,
+        x: values.slice(0,10),
+        y: otus.slice(0,10),
         type: "bar",
         orientation: "h",
-        text: text
+        text: text.slice(0,10)
     };
     var bar_data = [bar_trace];
     var bar_layout = {
-        title: "Sample Values by OTU Id Bar Chart",
-        yaxis: {title: {text: "OTU IDs"}},
+        title: "Top 10 Sample Values by OTU",
+        yaxis: {title: {text: "OTUs"}},
         xaxis: {title: {text: "Sample Values"}}
     };
     Plotly.newPlot("bar",bar_data,bar_layout);
@@ -120,7 +142,7 @@ function buildPlot(filter){
     };
     var bubble_data = [bubble_trace];
     var bubble_layout = {
-        title: "Sample Values by OTU Id Bubble Chart",
+        title: "Sample Values by OTU Id",
         showlegend: false,
         xaxis: {title: {text: "OTU IDs"}},
         yaxis: {title: {text: "Sample Values"}}
