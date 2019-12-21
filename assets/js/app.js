@@ -144,7 +144,7 @@ function buildPlot(filter){
     };
     var bubble_data = [bubble_trace];
     var bubble_layout = {
-        title: "Sample Values by OTU Id",
+        title: "All Sample Values by OTU Id",
         showlegend: false,
         xaxis: {title: {text: "OTU IDs"}},
         yaxis: {title: {text: "Sample Values"}}
