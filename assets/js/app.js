@@ -57,7 +57,7 @@ function getSample(samples,sample_id) {
     console.log(sample);
     // Sort OTUs by sample value
     var indices = [...sample.sample_values.keys()];
-    indices.sort((a, b) => sample.sample_values[b] - sample.sample_values[a]);
+    indices.sort((a, b) => sample.sample_values[a] - sample.sample_values[b]);
     sample.otus = indices.map(i => sample.otus[i]);
     sample.otu_ids = indices.map(i => sample.otu_ids[i]);
     sample.otu_labels = indices.map(i => sample.otu_labels[i]);
@@ -119,12 +119,14 @@ function buildPlot(filter){
     var otu_ids = sample.otu_ids;
     var values = sample.sample_values;
     var text = sample.otu_labels;
+    var end_record = otus.length;
+    var start_record = end_record - 10;
     var bar_trace = {
-        x: values.slice(0,10),
-        y: otus.slice(0,10),
+        x: values.slice(start_record,end_record),
+        y: otus.slice(start_record,end_record),
         type: "bar",
         orientation: "h",
-        text: text.slice(0,10)
+        text: text.slice(start_record,end_record)
     };
     var bar_data = [bar_trace];
     var bar_layout = {
